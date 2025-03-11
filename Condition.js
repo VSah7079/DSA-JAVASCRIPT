@@ -118,3 +118,4 @@ switch (num) {
     default: 
         console.log("Namaste Bhai"); // Likely output due to floating-point error
 }
+
