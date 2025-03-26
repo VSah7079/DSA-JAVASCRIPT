@@ -8,7 +8,34 @@
     <!-- <script src="Condition.js"></script> -->
     <!-- <script src="Loop.js"></script> -->
     <!-- <script src="arrays.js"></script> -->
-     <script src="strings.js"></script>
+    <!-- <script src="strings.js"></script> -->
+    <script src="practice.js"></script>
   </head>
-  <body></body>
+  <body>
+    <h1 id="name">Hello,vivek</h1>
+    <p class="info">This is paragrapgh</p>
+
+    <h2 id="name1">Rohit</h2>
+
+    <script>
+      let heading = document.getElementById("name");
+      console.log(heading.innerText);
+
+      let para = document.getElementsByClassName("info");
+      console.log(para[0].innerText);
+
+      let para1 = document.querySelector(".info");
+      console.log(para1.innerText);
+
+      let para2 = document.querySelectorAll(".info");
+      console.log(para2[0].innerText);
+
+      let para3 = document.getElementById("name1");
+      para3.innerText = "vivek kumar";
+
+      let para4 = document.getElementById("name");
+      para4.style.color = "blue";
+      para4.style.fontSize = "18px";
+    </script>
+  </body>
 </html>
