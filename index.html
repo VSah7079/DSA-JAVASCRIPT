@@ -17,7 +17,120 @@
 
     <h2 id="name1">Rohit</h2>
 
+    <button id="btn">Click Me</button>
+    <p id="text">Hello,vivek</p>
+
+    <h3 id="hoverme">Hover over me</h3>
+
+    <button id="addBtn">Add Paragraph</button>
+    <div id="container"></div>
+
+    <p id="remove">Click the button remove me</p>
+    <button id="removeBtn">Click Me!</button>
+
+    <button id="delayBtn">Click Me!</button>
+
+    <p id="message"></p>
+
+    <button id="startCounter">StartCounter</button>
+
+    <p id="counter">0</p>
+
     <script>
+      function step1() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("Step 1 completed");
+            resolve(); // Step 1 successful
+          }, 1000);
+        });
+      }
+
+      // ✅ Now executing promise chaining
+      step1()
+        .then(() => console.log("All steps are completed ✅"))
+        .catch((error) => console.log("Error:", error));
+
+      function step1() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("step 1 completed bhai");
+            resolve();
+          }, 1000);
+        });
+      }
+
+      function step2() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("step 2 compeleted");
+            resolve();
+          }, 1000);
+        });
+      }
+
+      async function processSteps() {
+        await step1();
+        await step2();
+        console.log("All steps are completed");
+      }
+      processSteps();
+
+
+      let counter = document.getElementById("counter");
+      let startCounter = document.getElementById("startCounter");
+      let count = 0;
+      let intervalid = null;
+
+      startCounter.addEventListener("click", function () {
+        if (intervalid === null) {
+          intervalid = setInterval(() => {
+            count++;
+            counter.innerText = count;
+          }, 1000);
+        }
+      });
+
+      let button1 = document.getElementById("delayBtn");
+      let message = document.getElementById("message");
+
+      button1.addEventListener("click", function () {
+        message.innerText = "wait fo 3 sec";
+
+        setTimeout(() => {
+          message.innerText = "Hello vivek jii";
+        }, 3000);
+      });
+
+      let removeButton = document.getElementById("removeBtn");
+      let removePara = document.getElementById("remove");
+
+      removeButton.addEventListener("click", function () {
+        removePara.remove();
+      });
+
+      let addButton = document.getElementById("addBtn");
+      let container = document.getElementById("container");
+      addButton.addEventListener("click", function () {
+        let newPara = document.createElement("p");
+        newPara.innerText = "this is new paragraph";
+        newPara.style.color = "blue";
+        container.appendChild(newPara);
+      });
+      let heading4 = document.getElementById("hoverme");
+      heading4.addEventListener("mouseover", function () {
+        heading4.style.color = "red";
+      });
+      heading4.addEventListener("mouseout", function () {
+        heading4.style.color = "black";
+      });
+
+      let button = document.getElementById("btn");
+      let text1 = document.getElementById("text");
+      button.addEventListener("click", function () {
+        text1.innerText = "Welcome to  JavaScript";
+      });
+
       let heading = document.getElementById("name");
       console.log(heading.innerText);
 
