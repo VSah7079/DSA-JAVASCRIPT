@@ -324,3 +324,113 @@ console.log("Balance after withdrawal: ₹", account1.getBalance());
 
 // Trying to access private-like property directly
 console.log("Direct balance access: ", account1._balance);
+
+function Person12(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person12.prototype.greet = function () {
+  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+};
+
+const person12 = new Person12("vivek", 20);
+person12.greet(); // ✅ Correct method call
+
+function Vehical13(type) {
+  this.type = type;
+}
+
+Vehical13.prototype.showType = function () {
+  console.log(`Vehical type: ${this.type}`); // Corrected syntax
+};
+
+function Car5(brand) {
+  this.brand = brand;
+}
+
+// Correct inheritance
+Car5.prototype = new Vehical13("Car");
+
+const myCar1 = new Car5("Toyota");
+myCar1.showType(); // Output: Vehical type: Car
+
+//Basic Inheritance using Object.create()
+
+const personProto = {
+  greet: function () {
+    console.log(`Hello my name is : ${this.name}`);
+  },
+};
+
+const vivek = Object.create(personProto);
+
+vivek.name = "Vivek";
+vivek.greet();
+
+const animal = {
+  eat: function () {
+    console.log(`${this.name} is eating `);
+  },
+};
+const dog = Object.create(animal);
+dog.name = "Buddy";
+dog.bark = function () {
+  console.log(`${this.name} is barking `);
+};
+dog.eat();
+dog.bark();
+
+const human = {
+  speak: function () {
+    console.log(`${this.name} is Speaking......`);
+  },
+};
+human.name = "Vivek";
+const student1 = Object.create(human);
+student1.study = function () {
+  console.log(`${this.name} is Studing......`);
+};
+
+const vivekstudent = Object.create(student1);
+vivekstudent.speak();
+vivekstudent.study();
+
+class Prs {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log(`Hello my name is ${this.name} and I am ${this.age} years old`);
+  }
+}
+
+const prs1 = new Prs("VivekSah", 19);
+prs1.greet();
+
+class Employee {
+  constructor(name, position) {
+    this.name = name;
+    this.position = position;
+  }
+  showDetails() {
+    console.log(`${this.name} work as a ${this.position}.`);
+  }
+}
+
+class Manager extends Employee {
+  constructor(name, position, department) {
+    super(name, position);
+    this.department = department;
+  }
+  showDetails() {
+    super.showDetails();
+    console.log(`${this.name} manages the ${this.department}  department`);
+  }
+}
+
+const manager1 = new Manager("Vivek", "Manager", "Sales");
+manager1.showDetails();
+
+
