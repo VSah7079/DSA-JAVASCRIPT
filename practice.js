@@ -434,3 +434,21 @@ const manager1 = new Manager("Vivek", "Manager", "Sales");
 manager1.showDetails();
 
 
+// for(var i = 1 ; i<=10;i++){
+//   console.log("block value",i)
+// }
+
+a = 190
+
+console.log('outer value',a)
+console.log(typeof(a))
+
+a = "Something"
+
+console.log('outer value',a)
+console.log(typeof(a))
+
+let a = 20;
+console.log(a);
+a = "something";
+console.log(a)
