@@ -334,9 +334,16 @@ Check karo: target right half me hai ya nahi
 //   i++;
 // } while (i < 101);
 
-for(let i=1; i<202; i++){
-  console.log(i);
-  if(i ==32 ){
-    break;
+// for(let i=1; i<202; i++){
+//   console.log(i);
+//   if(i ==32 ){
+//     break;
+//   }
+// }
+
+for (let i=1; i<202; i++){
+  if(i=== 32){
+    continue;
   }
+  console.log(i);
 }
