@@ -341,9 +341,10 @@ Check karo: target right half me hai ya nahi
 //   }
 // }
 
-for (let i=1; i<202; i++){
-  if(i=== 32){
-    continue;
-  }
-  console.log(i);
-}
+// for (let i=1; i<202; i++){
+//   if(i=== 32){
+//     continue;
+//   }
+//   console.log(i);
+// }
+
