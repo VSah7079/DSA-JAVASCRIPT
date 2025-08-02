@@ -322,8 +322,14 @@ Check karo: target right half me hai ya nahi
 //   console.log("vivek");
 // }
 
+// let i = 1;
+// while (i < 101) {
+//   console.log(i);
+//   i++;
+// }
+
 let i = 1;
-while (i < 101) {
+do {
   console.log(i);
   i++;
-}
+} while (i < 101);
