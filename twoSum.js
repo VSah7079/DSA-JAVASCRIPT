@@ -328,8 +328,15 @@ Check karo: target right half me hai ya nahi
 //   i++;
 // }
 
-let i = 1;
-do {
+// let i = 1;
+// do {
+//   console.log(i);
+//   i++;
+// } while (i < 101);
+
+for(let i=1; i<202; i++){
   console.log(i);
-  i++;
-} while (i < 101);
+  if(i ==32 ){
+    break;
+  }
+}
